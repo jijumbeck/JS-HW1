@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Линал на 10!</title>
+        <link rel="stylesheet" href="../css/index.css">
+    </head>
+    <body>
+        <header>
+            <div>
+                <button onclick="document.location='linearAlgebra.html'">Линейная алгебра</button>
+                <button onclick="document.location='analyticGeometry.html'">Аналитическая геометрия</button>
+                <button onclick="document.location='calculator.html'">Калькулятор</button>
+                <button onclick="document.location='helpMaterial.html'">Справочный материал</button>
+                <button onclick="document.location='usefulSites.html'">Полезные сайты</button>
+            </div>
+        </header>
+        
+        <div>Линейная алгебра</div>
+
+        <details>
+            <summary>
+                Матрицы и операции с ними
+            </summary>
+
+            <div>
+                <div>
+                    <i>Произведением матриц A размер n x p и B размера p x k</i> 
+                    называется матрица C типа n x k, где c_ij  равно сумме попарных 
+                    произведение i-ой строки A и j-ого столбца. Умножение матриц некоммутативно,
+                    т.е. A * B != B * A.
+                </div>
+                <img src="../img/matrixMultiplication.png" width=500/>
+            </div>
+
+            <div>
+                <i>Элементарные преобразования строк:</i>
+                <div>Пусть (i) - i-ая строка матрицы А.</div>
+                <ol>
+                    <li>(i) -> k * (i), k != 0 -- умножили i-ую строку на число k.</li>
+                    <li>(i) < - > (j) -- поменяли местами i-ую и j-ую строки.</li>
+                    <li>(i) -> (i) + k * (j) -- к i-ой строке прибавляется j-ая строка, умноженная на число k.</li>
+                </ol>
+            </div>
+
+            <div>
+                <div>
+                    <i>Ступенчатый вид матрицы</i> - матрица, у которой номера первых ненулевых элементов (ведущих) всех строк 
+                    возрастают, а нулевые строки внизу матрицы.
+                </div>
+                <img src="../img/stupenchatiy.png" width=100/>
+                <div>
+                    <i>Канонический вид матрицы</i> - матрица ступенчатого вида, у которой ведущие элементы равны 0, а 
+                    а в столбце с ведущим все числа равны нулю кроме ведущего.
+                </div>
+                <img src="../img/kanon.png" width=200/>
+            </div>
+
+            <div>
+                <i>Теорема Гаусса:</i> Любую конечную матрицу можно привести к ступенчатому/каноническому виду.
+            </div>
+        </details>
+
+        <details>
+            <summary>
+                Перестановки и подстановки
+            </summary>
+
+            <div>
+                <div>
+                    <i>Перестановка</i> - всякое расположение чисел от 1 до n в определенном порядке. 
+                    Пример: (2 1 3)
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <i>Подстановка</i> - биективное отображения множества 1, .., n в себя.
+                </div>
+                <img src="../img/podstanovka.png" width=200/>
+            </div>
+
+        </details>
+
+        <details>
+            <summary>
+                Определитель матрицы
+            </summary>
+
+            <div>
+                <i>Определитель</i> -- сумма по всем подстановкам, т.е. 
+                по sgn(v) * a_1_v(1) * ... * a_n_v(n), где n - подстановка.
+            </div>
+
+            <div>
+                <div>
+                    <i>Минор M_ij</i> - определитель матрицы, полученный путем вычеркивания i-ой строки и j-ого столбца.
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <i>Алгебраическое дополнение</i> - число (-1)^(i+j) * M_ij
+                </div>
+                <img src="../img/algAddition.JPG" width=400/>
+            </div>
+
+            <div>
+                <div>
+                    <i>Фальшивое разложение</i> - элементы строки при умножении на алгебраические дополнения
+                    к элементу другой строки дают ноль после суммирования.
+                </div>
+            </div>
+        </details>
+    </body>
+</html>

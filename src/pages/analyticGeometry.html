@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Линал на 10!</title>
+        <link rel="stylesheet" href="../css/index.css">
+    </head>
+    <body>
+        <header>
+            <div>
+                <button onclick="document.location='linearAlgebra.html'">Линейная алгебра</button>
+                <button onclick="document.location='analyticGeometry.html'">Аналитическая геометрия</button>
+                <button onclick="document.location='calculator.html'">Калькулятор</button>
+                <button onclick="document.location='helpMaterial.html'">Справочный материал</button>
+                <button onclick="document.location='usefulSites.html'">Полезные сайты</button>
+            </div>
+        </header>
+        
+        <div>Аналитическая геометрия</div>
+
+        <details>
+            <summary>
+                Векторы
+            </summary>
+
+            <div>
+                <div>
+                    <i>Векторы a и b коллинеарны</i> <=> Векторное произведение этих векторов равно нулю.
+                </div>
+                <img src="../img/CollVectors.png" width=500 />
+            </div>
+
+            <div>
+                <i>Смешанное произведение</i> векторов a, b, c -- число (a x b, c)
+            </div>
+
+            <div>
+                Векторное произведение обладает следующими свойствами:
+                <ol>
+                    <li>a x b = b x a (антикоммутативность)</li>
+                    <li>(ka) x b = k(a x b)</li>
+                    <li>(a + b) x c = a x c + b x c (дистрибутивность)</li>
+                </ol>
+            </div>
+
+            <div>
+                <div>
+                    <i>Объем тетраэдра</i> равно смешанному произведению векторов тетраэдра, поделенному на 6.
+                </div>
+                <img src="../img/smesh.png" width=200/>
+            </div>
+        </details>
+
+        <details>
+            <summary>
+                Плоскость
+            </summary>
+            
+            <div>
+                <i>Прямоугольная система координат</i> - пара из точки О и ортнонормированного базиса.
+            </div>
+
+            <div>
+                <i>Уравнение поверхности S</i> - уравнение F(x, y, z) = 0, в котором точки, лежащие на этой
+                поверхности, удовлетворяют ему, а точки, не лежащие на этой поверхности, не удовлетворяют ему.
+            </div>
+
+            <div>
+                Любое уравнение Ax + By + Cz + D = 0, где A^2 + B^2 + C^2 > 0, определяет плоскость.
+            </div>
+
+            <div>
+                <div>
+                    <i>Нормаль плоскости Ax + By + Cz + D = 0</i> - вектор (A, B, C), перпендиулярный плоскости.
+                </div>
+                <img src="../img/normal.jpg" width=200/>
+            </div>
+        </details>
+    </body>
+</html>

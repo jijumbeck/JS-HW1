@@ -18,6 +18,24 @@
 
         <div>Калькулятор</div>
 
+        <div>
+            <p>История операций</p>
+            <div id="history" style="width: 400px; height: 100px; overflow: auto;">
+                <ol>
+                    <script>
+                        if (localStorage.getItem('operations') === null) {
+                            localStorage.setItem('operations', '[]');
+                        }
+
+                        let operations = JSON.parse(localStorage.getItem('operations'));
+                        for (let operation of operations) {
+                            document.getElementById("history").innerHTML += "<li>" + operation + "</li>";
+                        }
+                    </script>
+                </ol>
+            </div>
+        </div>
+
         <details open="open">
             <summary>
                 Скалярное произведение
@@ -25,20 +43,26 @@
 
             <form onsubmit="calculateDotProduct()">
                 <div>
-                    x1 <input id="x1Dot" type="number" value=0/>
-                    y1 <input id="y1Dot" type="number" value=0/>
-                    z1 <input id="z1Dot" type="number" value=0/>
+                    x1 <input id="x1Dot" type="number" value="0"/>
+                    y1 <input id="y1Dot" type="number" value="0"/>
+                    z1 <input id="z1Dot" type="number" value="0"/>
                 </div>
                 <div>
-                    x2 <input id="x2Dot" type="number" value=0/>
-                    y2 <input id="y2Dot" type="number" value=0/>
-                    z2 <input id="z2Dot" type="number" value=0/>
+                    x2 <input id="x2Dot" type="number" value="0"/>
+                    y2 <input id="y2Dot" type="number" value="0"/>
+                    z2 <input id="z2Dot" type="number" value="0"/>
                 </div>
-                <div>
-                    <input type="submit" value="Посчитать"></input>
-                </div>
-                <div id="answerDot"></div>
+                <input type="submit" value="Посчитать"></input>
             </form>
+            <p id="answerDot">
+                <script>
+                    if (localStorage.getItem('answerDot') === null) {
+                        localStorage.setItem('answerDot', 'Не посчитано');
+                    }
+
+                    document.getElementById("answerDot").innerHTML = "Ответ: " + localStorage.getItem('answerDot');
+                </script>
+            </p>
         </details>
 
         <details open="open">
@@ -48,21 +72,27 @@
 
             <form onsubmit="calculateDistanceFromPointToPlane()">
                 <div>
-                    x1 <input id="xDis" type="number" value=0/>
-                    y1 <input id="yDis" type="number" value=0/>
-                    z1 <input id="zDis" type="number" value=0/>
+                    x1 <input id="xDis" type="number" value="0"/>
+                    y1 <input id="yDis" type="number" value="0"/>
+                    z1 <input id="zDis" type="number" value="0"/>
                 </div>
                 <div>
-                    A <input id="ADis" type="number" value=0/>
-                    B <input id="BDis" type="number" value=0/>
-                    C <input id="CDis" type="number" value=0/>
-                    D <input id="DDis" type="number" value=0/>
+                    A <input id="ADis" type="number" value="1"/>
+                    B <input id="BDis" type="number" value="1"/>
+                    C <input id="CDis" type="number" value="1"/>
+                    D <input id="DDis" type="number" value="1"/>
                 </div>
-                <div>
-                    <input type="submit" value="Посчитать"></input>
-                </div>
-                <div id="answerDis"></div>
+                <input type="submit" value="Посчитать"></input>
             </form>
+            <p id="answerDist">
+                <script>
+                    if (localStorage.getItem('answerDist') === null) {
+                        localStorage.setItem('answerDist', 'Не посчитано');
+                    }
+
+                    document.getElementById("answerDist").innerHTML = "Ответ: " + localStorage.getItem('answerDist');
+                </script>
+            </p>
         </details>
     </body>
 </html>

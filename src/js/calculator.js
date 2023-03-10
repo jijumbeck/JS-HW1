@@ -1,4 +1,12 @@
-var answer = "kjrngng"
+const numInputs = document.querySelectorAll('input[type=number]')
+
+numInputs.forEach(function(input) {
+  input.addEventListener('change', function(e) {
+    if (e.target.value == '') {
+      e.target.value = 0
+    }
+  })
+})
 
 function calculateDotProduct() {
     let x1 = document.getElementById('x1Dot').value
@@ -10,14 +18,11 @@ function calculateDotProduct() {
     let z2 = document.getElementById('z2Dot').value
     
     let result = x1 * x2 + y1 * y2 + z1 * z2
+    let resultText = String("(" + x1 + ", " + y1 + ", " + z1 + ") * (" +  x2 + ", " + y2 + ", " + z2 + ") = " + result);
 
-    let text = document.createTextNode(result)
-    const answerDiv = document.getElementById('answerDot')
-    answerDiv.innerHTML = result
+    localStorage.setItem('answerDot', resultText);
 
-    alert("Скалярное произведение равно " + result)
-
-    console.log(result)
+    saveOperation(resultText);
 
     return result
 }
@@ -38,14 +43,18 @@ function calculateDistanceFromPointToPlane() {
     }
     
     let result = Math.abs(A * x1 + B * y1 + C * z1 + D) / Math.sqrt(A*A + B*B + C*C)
+    let resultText = String("distance((" + x1 + ", " + y1 + ", " + z1 + "), " +  A + "x + " + B + "y + " + C + "z + " + D + " = 0) = " + result);
 
-    let text = document.createTextNode(result)
-    const answerDiv = document.getElementById('answerDis')
-    answerDiv.innerHTML = result
+    localStorage.setItem('answerDist', resultText);
 
-    alert("Расстояние от точки до плоскости равно " + result.toFixed(2))
-
-    console.log(result)
+    saveOperation(resultText);
 
     return result
+}
+
+function saveOperation(operation) {
+  let operationsCopy = localStorage.getItem('operations');
+  let array = JSON.parse(operationsCopy)
+  array.push(operation);
+  localStorage.setItem('operations', JSON.stringify(array))
 }
